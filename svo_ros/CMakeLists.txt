@@ -39,12 +39,12 @@ FIND_PACKAGE(catkin REQUIRED COMPONENTS
 # Add plain cmake packages 
 FIND_PACKAGE(OpenCV REQUIRED)
 FIND_PACKAGE(Eigen REQUIRED)
-FIND_PACKAGE(Sophus REQUIRED)
+FIND_PACKAGE(sophus REQUIRED)
 FIND_PACKAGE(Boost REQUIRED COMPONENTS thread)
 
 # Describe catkin Project
 catkin_package(
-  DEPENDS Eigen OpenCV Sophus Boost
+  DEPENDS Eigen OpenCV sophus Boost
   CATKIN_DEPENDS roscpp nav_msgs std_msgs visualization_msgs sensor_msgs image_transport cv_bridge tf svo svo_msgs vikit_common vikit_ros
   INCLUDE_DIRS include
   LIBRARIES svo_visualizer
@@ -55,7 +55,7 @@ INCLUDE_DIRECTORIES(
   include
   ${Eigen_INCLUDE_DIRS}
   ${OpenCV_INCLUDE_DIRS}
-  ${Sophus_INCLUDE_DIRS}
+  ${sophus_INCLUDE_DIRS}
   ${Boost_INCLUDE_DIRS}
   ${catkin_INCLUDE_DIRS}
 )
@@ -63,7 +63,7 @@ INCLUDE_DIRECTORIES(
 # Set link libraries
 LIST(APPEND LINK_LIBS 
   ${OpenCV_LIBS}
-  ${Sophus_LIBRARIES}
+  ${sophus_LIBRARIES}
   ${Boost_LIBRARIES}
   ${catkin_LIBRARIES}
 )
